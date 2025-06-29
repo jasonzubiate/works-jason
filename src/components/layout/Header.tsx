@@ -18,14 +18,16 @@ export default function Header() {
       </div>
 
       <nav className="fixed top-2 right-3 mix-blend-difference z-1000">
-        <motion.button
-          initial={{ y: 100 }}
-          animate={{ y: 0 }}
-          transition={{ duration: 0.5, delay: 4.6, ease: "easeInOut" }}
-          className={`${helveticaNowDisplay.className} font-medium leading-none lg:hidden cursor-pointer`}
-        >
-          Menu
-        </motion.button>
+        <div className="overflow-hidden">
+          <motion.button
+            initial={{ y: 100 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.5, delay: 4.6, ease: "easeInOut" }}
+            className={`${helveticaNowDisplay.className} font-medium leading-none lg:hidden cursor-pointer`}
+          >
+            Menu
+          </motion.button>
+        </div>
 
         <ul className="hidden lg:flex gap-5">
           <li className="overflow-hidden">

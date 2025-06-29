@@ -1,11 +1,10 @@
-"use client";
-
 import StickyVideo from "@/components/ui/StickyVideo";
+import ServicesCard from "@/components/ui/ServicesCard";
 import { helveticaNowDisplay, freightBigPro } from "@/fonts";
 
 export default function Services() {
   return (
-    <section className="md:grid grid-cols-12 gap-12 px-3 md:px-36 py-28 md:py-48">
+    <section className="md:grid grid-cols-12 gap-12 px-3 md:px-36 py-28 md:py-48 relative">
       <div className="col-span-5 flex flex-col">
         <div className="flex flex-col justify-center mb-[240px] md:mb-[700px] px-5 md:px-0">
           <div className="flex flex-col gap-4 mb-10">
@@ -260,6 +259,7 @@ export default function Services() {
       </div>
 
       <StickyVideo />
+      <ServicesCard />
     </section>
   );
 }

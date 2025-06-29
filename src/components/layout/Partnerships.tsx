@@ -82,7 +82,7 @@ export default function Partnerships() {
             <img
               src={icon}
               alt={`partner ${index + 1}`}
-              className="w-16 h-16"
+              className="w-12 h-12"
             />
           </li>
         ))}
