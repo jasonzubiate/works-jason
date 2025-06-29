@@ -5,8 +5,8 @@ import Partnerships from "@/components/layout/Partnerships";
 
 export default function Home() {
   return (
-    <main>
-      {/* <Hero /> */}
+    <main >
+      <Hero />
       <Services />
       <Work />
       <Partnerships />
