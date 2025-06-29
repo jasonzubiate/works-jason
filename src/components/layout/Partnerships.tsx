@@ -16,7 +16,7 @@ const partnershipIcons = [
 
 export default function Partnerships() {
   return (
-    <section className="flex flex-col items-center pt-60 pb-48 md:pb-96 px-3 md:px-36">
+    <section className="flex flex-col items-center pt-40 md:pt-60 pb-48 md:pb-96 px-3 md:px-36">
       <p className="leading-[0.7] text-[40px] md:text-[52px] text-center w-full lg:w-[740px] mx-auto mb-16">
         <span className={`${freightBigPro.className} italic`}>We seek </span>
         <span className={`${freightBigPro.className} uppercase`}>
