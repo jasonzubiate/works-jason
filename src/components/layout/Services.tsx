@@ -5,18 +5,18 @@ import { helveticaNowDisplay, freightBigPro } from "@/fonts";
 
 export default function Services() {
   return (
-    <section className="grid grid-cols-12 gap-12 px-36 py-48">
+    <section className="md:grid grid-cols-12 gap-12 px-3 md:px-36 py-28 md:py-48">
       <div className="col-span-5 flex flex-col">
-        <div className="flex flex-col justify-center mb-[700px]">
+        <div className="flex flex-col justify-center mb-[240px] md:mb-[700px] px-5 md:px-0">
           <div className="flex flex-col gap-4 mb-10">
             <p
-              className={`${helveticaNowDisplay.className} text-neutral-500 text-xs leading-none`}
+              className={`${helveticaNowDisplay.className} text-neutral-500 md:text-xs leading-none`}
             >
               Stage 1
             </p>
 
             <h2
-              className={`${freightBigPro.className} text-[52px] font-light leading-[0.9]`}
+              className={`${freightBigPro.className} text-[40px] md:text-[52px] font-light leading-[0.9]`}
             >
               Strategy
             </h2>
@@ -106,16 +106,16 @@ export default function Services() {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-center mb-[700px]">
+        <div className="flex flex-col justify-center mb-[240px] md:mb-[700px] px-5 md:px-0">
           <div className="flex flex-col gap-4 mb-10">
             <p
-              className={`${helveticaNowDisplay.className} text-neutral-500 text-xs leading-none`}
+              className={`${helveticaNowDisplay.className} text-neutral-500 md:text-xs leading-none`}
             >
               Stage 2
             </p>
 
             <h2
-              className={`${freightBigPro.className} text-[52px] font-light leading-[0.9]`}
+              className={`${freightBigPro.className} text-[40px] md:text-[52px] font-light leading-[0.9]`}
             >
               Design
             </h2>
@@ -182,16 +182,16 @@ export default function Services() {
           </ul>
         </div>
 
-        <div className="flex flex-col justify-center mb-18">
+        <div className="flex flex-col justify-center mb-18 px-5 md:px-0">
           <div className="flex flex-col gap-4 mb-10">
             <p
-              className={`${helveticaNowDisplay.className} text-neutral-500 text-xs leading-none`}
+              className={`${helveticaNowDisplay.className} text-neutral-500 md:text-xs leading-none`}
             >
               Stage 3
             </p>
 
             <h2
-              className={`${freightBigPro.className} text-[52px] font-light leading-[0.9]`}
+              className={`${freightBigPro.className} text-[40px] md:text-[52px] font-light leading-[0.9]`}
             >
               Scale
             </h2>
