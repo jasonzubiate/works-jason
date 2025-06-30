@@ -99,7 +99,7 @@ export default function ServicesCard() {
   return (
     <div
       ref={containerRef}
-      className="absolute top-0 left-0 h-full w-full border border-red-500"
+      className="absolute top-0 left-0 h-full w-full"
     >
       <motion.div
         initial={{ opacity: 0, y: 200 }}

@@ -7,6 +7,7 @@ export default function StickyVideo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   // Scroll progress through the entire services section
   const { scrollYProgress } = useScroll({
@@ -17,14 +18,21 @@ export default function StickyVideo() {
   // Load images once on mount
   useEffect(() => {
     const loadedImages: HTMLImageElement[] = [];
+    let loadedCount = 0;
+    const totalImages = 206;
 
-    for (let i = 1; i <= 206; i++) {
+    for (let i = 1; i <= totalImages; i++) {
       const image = new window.Image();
+      image.onload = () => {
+        loadedCount++;
+        if (loadedCount === totalImages) {
+          setImages(loadedImages);
+          setImagesLoaded(true);
+        }
+      };
       image.src = `/images/videos-frames/${i}.webp`;
       loadedImages.push(image);
     }
-
-    setImages(loadedImages);
   }, []);
 
   // Map scroll progress to frame index (0-205)
@@ -45,16 +53,25 @@ export default function StickyVideo() {
     [images]
   );
 
+  // Render first frame immediately when images are loaded
+  useEffect(() => {
+    if (imagesLoaded && images.length > 0) {
+      renderFrame(0);
+    }
+  }, [imagesLoaded, images, renderFrame]);
+
   useMotionValueEvent(frameIndex, "change", (latest) => {
-    renderFrame(Math.floor(Number(latest)));
+    if (imagesLoaded) {
+      renderFrame(Math.floor(Number(latest)));
+    }
   });
 
   return (
     <div
       ref={containerRef}
-      className="hidden lg:blockcol-span-6 col-start-7 h-full"
+      className="hidden lg:block col-span-6 col-start-7 h-full"
     >
-      <div className="hidden lg:block sticky top-32 h-[550px] bg-neutral-900">
+      <div className="sticky top-32 h-[550px] bg-neutral-800">
         <canvas ref={canvasRef} className="h-full w-full object-cover" />
       </div>
     </div>
