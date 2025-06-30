@@ -92,9 +92,6 @@ function CarouselSlide({
   index,
   isInView,
 }: CarouselSlideProps & { isInView: boolean }) {
-  const ctaRef = useRef<HTMLAnchorElement>(null);
-  const isCTAInView = useInView(ctaRef, { once: true });
-
   return (
     <div className="flex-[0_0_100%] min-w-0 w-[275px] md:w-[350px]">
       <div className="flex flex-col gap-8">
@@ -148,27 +145,13 @@ function CarouselSlide({
             </p>
           </Copy>
 
-          <Link ref={ctaRef} href="/" className="overflow-hidden">
-            <motion.div
-              initial={{ y: "110%" }}
-              animate={
-                isCTAInView
-                  ? { y: 0 }
-                  : { y: "110%", transition: { duration: 0.6 } }
-              }
-              transition={{
-                duration: 0.5,
-                delay: index * 0.075 + 0.4,
-              }}
-              className="flex items-center gap-1 group"
+          <Link href="/" className="flex items-center gap-1 group">
+            <span
+              className={`${helveticaNowDisplay.className} text-lg text-neutral-500 group-hover:text-white transition-colors duration-300`}
             >
-              <span
-                className={`${helveticaNowDisplay.className} text-lg text-neutral-500 group-hover:text-white transition-colors duration-300`}
-              >
-                View Project
-              </span>
-              <ArrowUpRight className="w-5.5 h-5.5 text-neutral-500 group-hover:text-white transition-colors duration-300" />
-            </motion.div>
+              View Project
+            </span>
+            <ArrowUpRight className="w-5.5 h-5.5 text-neutral-500 group-hover:text-white transition-colors duration-300" />
           </Link>
         </div>
       </div>
