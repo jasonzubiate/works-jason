@@ -88,11 +88,14 @@ export default function Partnerships() {
         ))}
       </ul>
 
-      <button className="px-4 py-3 rounded-md bg-neutral-800 hover:bg-neutral-700 transition-colors duration-300 cursor-pointer">
+      <a
+        href="mailto:hello@works.studio"
+        className="px-4 py-3 rounded-md bg-neutral-800 hover:bg-neutral-700 transition-colors duration-300 cursor-pointer"
+      >
         <span className={`${helveticaNowDisplay.className} md:text-lg`}>
           Partner With Us
         </span>
-      </button>
+      </a>
     </section>
   );
 }

@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="h-[300svh] w-full relative px-3 md:px-36"
+      className="h-[300svh] w-full relative px-4 md:px-36"
     >
       <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
         <motion.video
@@ -46,7 +46,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               style={{ opacity: text1Opacity }}
-              transition={{ duration: 0.8, delay: 4.5, ease: "easeInOut" }}
+              transition={{ duration: 0.8, delay: 4, ease: "easeInOut" }}
               className={`${freightBigPro.className} absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] text-center text-[40px] md:text-[52px] font-light leading-[0.9]`}
             >
               <span>

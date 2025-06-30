@@ -38,11 +38,11 @@ export default function ServicesCard() {
 
   // Option 1: Use useInView for entry/exit detection
   const sectionInView = useInView(containerRef, {
-    margin: "0px 0px -100px 0px",
+    margin: "0px 0px -300px 0px",
   });
 
   const sectionExitView = useInView(containerRef, {
-    margin: "-800px 0px 0px 0px",
+    margin: "-700px 0px 0px 0px",
   });
 
   const shouldShow = sectionInView && sectionExitView;
@@ -80,10 +80,10 @@ export default function ServicesCard() {
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     // Update current stage based on scroll progress
-    if (latest < 0.50) {
+    if (latest < 0.5) {
       // 64/207 ≈ 0.31
       setCurrentStage(STAGES[0]);
-    } else if (latest < 0.80) {
+    } else if (latest < 0.85) {
       // 141/207 ≈ 0.68
       setCurrentStage(STAGES[1]);
     } else if (latest < 1) {
@@ -97,13 +97,14 @@ export default function ServicesCard() {
   });
 
   return (
-    <div
-      ref={containerRef}
-      className="absolute top-0 left-0 h-full w-full"
-    >
+    <div ref={containerRef} className="absolute top-0 left-0 h-full w-full">
       <motion.div
-        initial={{ opacity: 0, y: 200 }}
-        animate={shouldShow ? { opacity: 1, y: 0 } : { opacity: 0, y: 200 }}
+        initial={{ opacity: 0, y: 200, scale: 0.9 }}
+        animate={
+          shouldShow
+            ? { opacity: 1, y: 0, scale: 1 }
+            : { opacity: 0, y: 200, scale: 0.9 }
+        }
         transition={{ duration: 0.8, ease: [0.45, 0, 0.55, 1] }}
         className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center lg:hidden gap-6 rounded-xl bg-neutral-700/60 backdrop-blur-lg py-2 pl-4 pr-2 z-999"
       >

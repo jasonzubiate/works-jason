@@ -8,6 +8,7 @@ import { helveticaNowDisplay } from "@/fonts";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { work } from "@/data/work";
 import { CarouselSlideProps } from "@/types";
+import Copy from "../layout/Copy";
 
 export default function ClientCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false });
@@ -91,6 +92,9 @@ function CarouselSlide({
   index,
   isInView,
 }: CarouselSlideProps & { isInView: boolean }) {
+  const ctaRef = useRef<HTMLAnchorElement>(null);
+  const isCTAInView = useInView(ctaRef, { once: true });
+
   return (
     <div className="flex-[0_0_100%] min-w-0 w-[275px] md:w-[350px]">
       <div className="flex flex-col gap-8">
@@ -102,8 +106,8 @@ function CarouselSlide({
               : { clipPath: "inset(0 0 100% 0)" }
           }
           transition={{
-            duration: 0.8,
-            delay: index * 0.1,
+            duration: 1,
+            delay: index * 0.075,
             ease: [0.76, 0, 0.24, 1],
           }}
           className="relative h-[343px] md:h-[440px] w-full bg-neutral-800 overflow-hidden group will-change-transform"
@@ -112,8 +116,8 @@ function CarouselSlide({
             initial={{ scale: 1.2 }}
             animate={{ scale: 1 }}
             transition={{
-              duration: 0.8,
-              delay: index * 0.1,
+              duration: 1,
+              delay: index * 0.075,
               ease: [0.76, 0, 0.24, 1],
             }}
             className="w-full h-full"
@@ -128,26 +132,43 @@ function CarouselSlide({
         </motion.div>
 
         <div className="flex flex-col gap-4">
-          <h4
-            className={`${helveticaNowDisplay.className} text-lg leading-[1.25]`}
-          >
-            {name}
-          </h4>
-
-          <p
-            className={`${helveticaNowDisplay.className} text-lg text-neutral-500 leading-[1.25]`}
-          >
-            {description}
-          </p>
-
-          <Link href="/" className="flex items-center gap-1 group">
-            <span
-              className={`${helveticaNowDisplay.className} text-lg text-neutral-500 group-hover:text-white transition-colors duration-300`}
+          <Copy delay={index * 0.1} offset={90}>
+            <h4
+              className={`${helveticaNowDisplay.className} text-lg leading-[1.25]`}
             >
-              View Project
-            </span>
+              {name}
+            </h4>
+          </Copy>
 
-            <ArrowUpRight className="w-5.5 h-5.5 text-neutral-500 group-hover:text-white transition-colors duration-300" />
+          <Copy delay={index * 0.1} offset={90}>
+            <p
+              className={`${helveticaNowDisplay.className} text-lg text-neutral-500 leading-[1.25]`}
+            >
+              {description}
+            </p>
+          </Copy>
+
+          <Link ref={ctaRef} href="/" className="overflow-hidden">
+            <motion.div
+              initial={{ y: "110%" }}
+              animate={
+                isCTAInView
+                  ? { y: 0 }
+                  : { y: "110%", transition: { duration: 0.6 } }
+              }
+              transition={{
+                duration: 0.5,
+                delay: index * 0.075 + 0.4,
+              }}
+              className="flex items-center gap-1 group"
+            >
+              <span
+                className={`${helveticaNowDisplay.className} text-lg text-neutral-500 group-hover:text-white transition-colors duration-300`}
+              >
+                View Project
+              </span>
+              <ArrowUpRight className="w-5.5 h-5.5 text-neutral-500 group-hover:text-white transition-colors duration-300" />
+            </motion.div>
           </Link>
         </div>
       </div>

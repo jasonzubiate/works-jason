@@ -11,7 +11,7 @@ export default function Header() {
         <motion.img
           initial={{ y: 100 }}
           animate={{ y: 0 }}
-          transition={{ duration: 0.5, delay: 4.6, ease: "easeInOut" }}
+          transition={{ duration: 0.5, delay: 4.2, ease: "easeInOut" }}
           src="/images/general/works-logo.svg"
           alt="logo"
         />
@@ -22,7 +22,7 @@ export default function Header() {
           <motion.button
             initial={{ y: 100 }}
             animate={{ y: 0 }}
-            transition={{ duration: 0.5, delay: 4.6, ease: "easeInOut" }}
+            transition={{ duration: 0.5, delay: 4.2, ease: "easeInOut" }}
             className={`${helveticaNowDisplay.className} font-medium leading-none lg:hidden cursor-pointer`}
           >
             Menu
@@ -34,7 +34,7 @@ export default function Header() {
             <motion.div
               initial={{ y: 100 }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.5, delay: 4.6, ease: "easeInOut" }}
+              transition={{ duration: 0.5, delay: 4.2, ease: "easeInOut" }}
             >
               <Link href="/">
                 <span
@@ -49,7 +49,7 @@ export default function Header() {
             <motion.div
               initial={{ y: 100 }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.5, delay: 4.6, ease: "easeInOut" }}
+              transition={{ duration: 0.5, delay: 4.2, ease: "easeInOut" }}
             >
               <Link href="/">
                 <span
@@ -64,7 +64,7 @@ export default function Header() {
             <motion.div
               initial={{ y: 100 }}
               animate={{ y: 0 }}
-              transition={{ duration: 0.5, delay: 4.6, ease: "easeInOut" }}
+              transition={{ duration: 0.5, delay: 4.2, ease: "easeInOut" }}
             >
               <Link href="/">
                 <span
