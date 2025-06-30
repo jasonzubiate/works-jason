@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { ReactLenis } from "lenis/react";
 import "./globals.css";
 import Footer from "@/components/layout/Footer";
