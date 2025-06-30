@@ -68,7 +68,7 @@ export default function Hero() {
               </span>
               <span className="italic">Gesamtkunstwerk</span>
               <span>—the </span>
-              <span className="italic">'total work of art'</span>
+              <span className="italic">&lsquo;total work of art&rsquo;</span>
               <span>
                 —we approach each project as a fully considered system, where
                 every decision is in{" "}

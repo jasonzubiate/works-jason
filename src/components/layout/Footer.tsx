@@ -29,13 +29,13 @@ export default function Footer() {
       <div className="flex flex-col md:grid-cols-1 mb-32">
         <ul className="flex flex-col gap-1.5 justify-self-end">
           <li className="md:text-sm font-medium leading-none">
-            <a href="/">Instagram</a>
+            <a href="https://www.instagram.com/works.studio/">Instagram</a>
           </li>
           <li className="md:text-sm font-medium leading-none">
-            <a href="/">Linkedin</a>
+            <a href="https://www.linkedin.com/company/works-studio/">Linkedin</a>
           </li>
           <li className="md:text-sm font-medium leading-none">
-            <a href="/">X (Twitter)</a>
+            <a href="https://x.com/worksstudio">X (Twitter)</a>
           </li>
         </ul>
       </div>
