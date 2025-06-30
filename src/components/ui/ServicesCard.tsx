@@ -106,7 +106,7 @@ export default function ServicesCard() {
             : { opacity: 0, y: 200, scale: 0.9 }
         }
         transition={{ duration: 0.8, ease: [0.45, 0, 0.55, 1] }}
-        className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center lg:hidden gap-6 rounded-xl bg-neutral-700/60 backdrop-blur-lg py-2 pl-4 pr-2 z-999"
+        className="fixed bottom-6 left-1/2 -translate-x-1/2 flex items-center md:hidden gap-6 rounded-xl bg-neutral-700/60 backdrop-blur-lg py-2 pl-4 pr-2 z-999"
       >
         <div className="flex flex-col gap-1">
           <p

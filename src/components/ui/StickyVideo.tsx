@@ -69,7 +69,7 @@ export default function StickyVideo() {
   return (
     <div
       ref={containerRef}
-      className="hidden lg:block col-span-6 col-start-7 h-full"
+      className="hidden md:block col-span-6 col-start-7 h-full"
     >
       <div className="sticky top-32 h-[550px] bg-neutral-800">
         <canvas ref={canvasRef} className="h-full w-full object-cover" />
